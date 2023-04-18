@@ -1,7 +1,6 @@
 package easy;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class TwoSum {
@@ -19,14 +18,13 @@ public class TwoSum {
     }
 
     public static int[] twoSum(int[] nums, int target) {
-        int[] result = new int[2];
-
-        for(int i = 0, j = 1; i < nums.length && j < nums.length; i++, j++) {
-            if(nums[i] + nums[j] == target) {
-                result[0] = i;
-                result[1] = j;
+        for(int i = 0; i < nums.length; i++) {
+            for(int j = i + 1; j < nums.length; j++) {
+                if(nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
+                }
             }
         }
-        return result;
+        return new int[] {};
     }
 }
